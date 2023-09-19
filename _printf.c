@@ -10,7 +10,9 @@ int _printf(const char *format, ...)
 	int count = 0;
 	char const *ptr;
 	va_list ap;
-	int cond = (!format || (format[0] == '%' && !format[1]) || (format[0] == '%' && format[1] == ' ' && !format[2]));
+	int cond = (!format ||
+			(format[0] == '%' && !format[1]) ||
+			(format[0] == '%' && format[1] == ' ' && !format[2]));
 
 	if (cond)
 		return (-1);
