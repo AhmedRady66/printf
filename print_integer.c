@@ -9,7 +9,7 @@ void print_integer(int num, int *count)
 {
 	char buffer[12];
 	char *ptr = buffer;
-	int is_neg = 0;
+	int is_negative = (num < 0);
 
 	if (num == 0)
 	{
@@ -17,11 +17,10 @@ void print_integer(int num, int *count)
 		(*count)++;
 		return;
 	}
-	if (num < 0)
+	if (is_negative)
 	{
 		write(1, "-", 1);
 		(*count)++;
-		is_neg = 1;
 		num = -num;
 	}
 	while (num > 0)
